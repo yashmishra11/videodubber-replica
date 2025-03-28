@@ -6,7 +6,7 @@ import { Rnd } from "react-rnd";
 import ReactPlayer from "react-player";
 import { IMAGE_MIME_TYPE } from "@mantine/dropzone";
 
-const VIDEO_MIME_TYPE = ["video/mp4", "video/webm", "video/ogg"];
+const VIDEO_MIME_TYPE = ["video/mp4", "video/webm", "video/ogg"] as const;
 
 export default function Editor() {
   const [mediaFile, setMediaFile] = useState<string | null>(null);
@@ -44,9 +44,9 @@ export default function Editor() {
 
     const fileType = file.type;
 
-    if (IMAGE_MIME_TYPE.includes(fileType)) {
+    if (IMAGE_MIME_TYPE.includes(fileType as (typeof IMAGE_MIME_TYPE)[number])) {
       setMediaType("image");
-    } else if (VIDEO_MIME_TYPE.includes(fileType)) {
+    } else if (VIDEO_MIME_TYPE.includes(fileType as (typeof VIDEO_MIME_TYPE)[number])) {
       setMediaType("video");
     } else {
       alert("Unsupported file type!");
@@ -116,8 +116,8 @@ export default function Editor() {
           {/* Hidden File Input */}
           <input
             type="file"
-            style={{ display: 'none' }}
-            accept={[...IMAGE_MIME_TYPE, ...VIDEO_MIME_TYPE].join(',')}
+            style={{ display: "none" }}
+            accept={[...IMAGE_MIME_TYPE, ...VIDEO_MIME_TYPE].join(",")}
             onChange={handleFileChange}
             ref={fileInputRef}
           />
@@ -131,7 +131,7 @@ export default function Editor() {
         </Paper>
 
         {/* Main Canvas */}
-        <div style={{ flex: 1, position: 'relative', backgroundColor: '#1A1B1E' }}>
+        <div style={{ flex: 1, position: "relative", backgroundColor: "#1A1B1E" }}>
           {!mediaFile ? (
             <Container style={{ textAlign: "center", padding: "50px", color: "#FFFFFF" }}>
               Drop your video/image here
