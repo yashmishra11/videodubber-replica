@@ -53,13 +53,13 @@ export default function Editor() {
       return;
     }
 
+    //setMediaFile(file); // Use the File object directly
     setMediaFile(URL.createObjectURL(file));
   };
 
   const handleUploadButtonClick = () => {
     fileInputRef.current?.click();
   };
-
 
   const handleDelete = () => {
     setMediaFile(null);
@@ -72,7 +72,7 @@ export default function Editor() {
 
   return (
     <MantineProvider>
-      <div style={{ display: 'flex', height: '100vh' }}>
+      <div style={{ display: "flex", height: "100vh" }}>
         {/* Left Sidebar */}
         <Paper shadow="md" p="md" style={{ width: 300, backgroundColor: "#2D2E3B", color: "#FFFFFF" }}>
           <Group mb="md">
@@ -80,12 +80,12 @@ export default function Editor() {
               label="Width"
               value={dimensions.width}
               onChange={(val) => setDimensions((p) => ({ ...p, width: Number(val) || 200 }))}
-            /><br></br>
+            />
             <NumberInput
               label="Height"
               value={dimensions.height}
               onChange={(val) => setDimensions((p) => ({ ...p, height: Number(val) || 200 }))}
-            /><br></br>
+            />
           </Group>
 
           <Group mb="md">
@@ -93,12 +93,12 @@ export default function Editor() {
               label="Start Time (sec)"
               value={startTime}
               onChange={(val) => setStartTime(Number(val) || 0)}
-            /><br></br>
+            />
             <NumberInput
               label="End Time (sec)"
               value={endTime}
               onChange={(val) => setEndTime(Number(val) || 5)}
-            /><br></br>
+            />
           </Group>
 
           <Button
@@ -107,12 +107,12 @@ export default function Editor() {
             color={isPlaying ? "red" : "blue"}
           >
             {isPlaying ? "Stop" : "Play"} ({currentTime}s)
-          </Button>_
+          </Button>
 
           {/* Upload Button */}
           <Button fullWidth onClick={handleUploadButtonClick}>
             Upload Media
-          </Button>_
+          </Button>
 
           {/* Hidden File Input */}
           <input
@@ -127,8 +127,8 @@ export default function Editor() {
           {mediaFile && (
             <Button fullWidth color="red" onClick={handleDelete}>
               Delete Media
-            </Button> 
-        )}
+            </Button>
+          )}
         </Paper>
 
         {/* Main Canvas */}
