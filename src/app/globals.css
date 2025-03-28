@@ -1,0 +1,67 @@
+/* globals.css */
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif; /* Set a default font */
+  background-color: #1A1B1E; /* Dark background for the editor */
+  color: #FFFFFF; /* Light text color */
+}
+
+/* Main container style */
+#__next {
+  display: flex;
+  height: 100%;
+}
+
+/* Left sidebar styling */
+.sidebar {
+  background-color: #2D2E3B; /* Darker sidebar color */
+  padding: 20px;
+}
+
+/* Canvas area styling */
+.canvas {
+  flex-grow: 1; /* Allow canvas to take up remaining space */
+  position: relative;
+}
+
+/* Dropzone styling */
+.dropzone {
+  border: 2px dashed #969696; /* Dashed border for dropzone */
+  border-radius: 8px;
+  height: calc(100% - 40px); /* Adjust for padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button styling */
+button {
+  background-color: #0070f3; /* Primary button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-color: #005bb5; /* Darker shade on hover */
+}
+
+/* Input styling */
+input[type="number"] {
+  width: calc(50% - 10px); /* Responsive width for inputs */
+}
+
+input[type="number"]:focus {
+  outline: none; /* Remove default focus outline */
+}
