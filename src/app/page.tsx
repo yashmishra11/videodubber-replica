@@ -53,7 +53,6 @@ export default function Editor() {
       return;
     }
 
-    //setMediaFile(file); // Use the File object directly
     setMediaFile(URL.createObjectURL(file));
   };
 
