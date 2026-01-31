@@ -96,7 +96,7 @@ export default function Editor() {
             <div>
               <Text 
                 size="xl" 
-                weight={700} 
+                fw={700} 
                 style={{ 
                   background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                   WebkitBackgroundClip: "text",
@@ -121,7 +121,7 @@ export default function Editor() {
             <div>
               <Text 
                 size="sm" 
-                weight={600} 
+                fw={600} 
                 mb="sm"
                 style={{ color: "#e0e0e0" }}
               >
@@ -193,7 +193,7 @@ export default function Editor() {
             <div>
               <Text 
                 size="sm" 
-                weight={600} 
+                fw={600} 
                 mb="sm"
                 style={{ color: "#e0e0e0" }}
               >
@@ -404,7 +404,7 @@ export default function Editor() {
               >
                 <Text 
                   size="xl" 
-                  weight={600}
+                  fw={600}
                   style={{ 
                     color: "rgba(255, 255, 255, 0.6)",
                     marginBottom: "0.5rem"
