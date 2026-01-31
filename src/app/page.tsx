@@ -91,7 +91,7 @@ export default function Editor() {
             boxShadow: "4px 0 24px rgba(0, 0, 0, 0.5)",
           }}
         >
-          <Stack spacing="lg">
+          <Stack gap="lg">
             {/* Header */}
             <div>
               <Text 
@@ -455,6 +455,7 @@ export default function Editor() {
                   height="100%"
                 />
               ) : (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={mediaFile}
                   alt="Uploaded"
